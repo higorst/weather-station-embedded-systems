@@ -4,6 +4,20 @@ import themes from "Provider/themes";
 import { motion } from "framer-motion";
 import { NavLink } from "components";
 
+export const Container = styled.div`
+  display: flex;
+  flex-direction: row-reverse;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  margin-top: auto;
+
+  ${themes.medias.lessThan("lesshd")`
+    flex-direction: column;
+  `}
+`;
+
 export const Title = styled(motion.h1)`
   line-height: 24px;
   font-size: ${rem(24)};
@@ -23,20 +37,16 @@ export const Title = styled(motion.h1)`
   }
 `;
 
-export const Container = styled.div`
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  padding-top: 20px;
-  padding-bottom: 20px;
-`;
-
 export const WrapperItems = styled(motion.div)`
   width: 100%;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   grid-gap: 20px;
   padding-bottom: 20px;
+
+  ${themes.medias.lessThan("lesshd")`
+    margin-top: 30px;
+  `}
 `;
 
 export const Link = styled(NavLink)``;

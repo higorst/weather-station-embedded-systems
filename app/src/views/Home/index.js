@@ -41,34 +41,34 @@ function Home() {
             )[0]
           }
         />
+        <S.WrapperItems
+          initial="hidden"
+          animate="visible"
+          variants={animate.shortcuts.container}
+        >
+          {categories.map((item) => (
+            <Category
+              key={item.id}
+              color={item.color}
+              length={item.length}
+              id={item.id}
+              items={
+                item.id === "baixo"
+                  ? indexes.slice(0, 2)
+                  : item.id === "moderado"
+                  ? indexes.slice(2, 5)
+                  : item.id === "alto"
+                  ? indexes.slice(5, 7)
+                  : item.id === "muito-alto"
+                  ? indexes.slice(7, 10)
+                  : indexes.slice(10)
+              }
+            >
+              <p>{item.title}</p>
+            </Category>
+          ))}
+        </S.WrapperItems>
       </S.Container>
-      <S.WrapperItems
-        initial="hidden"
-        animate="visible"
-        variants={animate.shortcuts.container}
-      >
-        {categories.map((item) => (
-          <Category
-            key={item.id}
-            color={item.color}
-            length={item.length}
-            id={item.id}
-            items={
-              item.id === "baixo"
-                ? indexes.slice(0, 2)
-                : item.id === "moderado"
-                ? indexes.slice(2, 5)
-                : item.id === "alto"
-                ? indexes.slice(5, 7)
-                : item.id === "muito-alto"
-                ? indexes.slice(7, 10)
-                : indexes.slice(10)
-            }
-          >
-            <p>{item.title}</p>
-          </Category>
-        ))}
-      </S.WrapperItems>
     </Container>
   );
 }

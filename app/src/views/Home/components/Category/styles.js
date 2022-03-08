@@ -1,7 +1,10 @@
-import { size } from "polished";
+import { size, transparentize } from "polished";
+import themes from "Provider/themes";
 import styled from "styled-components";
 
 export const Container = styled.div`
+  transition: width 0.2s, padding-left 0.5s;
+
   display: flex;
   margin-right: auto;
   flex-direction: row;
@@ -11,10 +14,21 @@ export const Container = styled.div`
   width: ${({ length }) => length}%;
   border-radius: 4px 20px 20px 4px;
 
-  background-color: ${({ color }) => color};
-
-  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+  background: ${({ color }) => transparentize(0.7, color)};
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
     rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  backdrop-filter: blur(4.3px);
+  -webkit-backdrop-filter: blur(4.3px);
+
+  ${themes.medias.lessThan("lesshd")`
+    padding: 3px 10px;
+  `}
+
+  :hover {
+    width: ${({ length }) => length + 10}%;
+    padding-left: 10%;
+  }
 `;
 
 export const Items = styled.div`
@@ -36,12 +50,6 @@ export const Protection = styled.div`
   border-radius: 20px;
 
   margin-right: auto;
-
-  /* box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
-    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
-    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
-    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
-    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px; */
 `;
 
 export const Icon = styled.img`
@@ -51,8 +59,14 @@ export const Icon = styled.img`
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
     rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 
+  background-color: ${transparentize(0.55, "white")};
+
   margin-left: 20px;
   :first-child {
     margin-left: 0;
   }
+
+  ${themes.medias.lessThan("lesshd")`
+    padding: 5px 10px;
+  `}
 `;

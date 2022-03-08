@@ -2,11 +2,12 @@ import styled, { css } from "styled-components";
 import themes from "Provider/themes";
 
 const styles = css`
-  margin: 0 10%;
+  margin: 5% 10%;
   max-width: 1600px;
 
   ${themes.medias.lessThan("hd")`
     padding: 0;
+    margin: 2% 5%;
   `}
 `;
 

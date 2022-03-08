@@ -61,31 +61,31 @@ const categories = [
     id: "baixo",
     title: "Baixo",
     color: "#A1C620",
-    length: 30,
+    length: 50,
   },
   {
     id: "moderado",
     title: "Moderado",
     color: "#EEA91D",
-    length: 40,
+    length: 60,
   },
   {
     id: "alto",
     title: "Alto",
     color: "#E96B1F",
-    length: 50,
+    length: 70,
   },
   {
     id: "muito-alto",
     title: "Muito Alto",
     color: "#B563A5",
-    length: 60,
+    length: 80,
   },
   {
     id: "extremo",
     title: "Extremo",
     color: "#837BB7",
-    length: 70,
+    length: 90,
   },
 ];
 
