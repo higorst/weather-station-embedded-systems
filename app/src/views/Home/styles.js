@@ -23,16 +23,20 @@ export const Title = styled(motion.h1)`
   }
 `;
 
+export const Container = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+`;
+
 export const WrapperItems = styled(motion.div)`
+  width: 100%;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   grid-gap: 20px;
-
-  margin-top: 70px;
-
-  ${themes.medias.lessThan("hd")`
-    margin-top: 30px;
-  `}
+  padding-bottom: 20px;
 `;
 
 export const Link = styled(NavLink)``;
