@@ -51,7 +51,7 @@ const indexes = [
   },
   {
     id: "11",
-    title: "11",
+    title: "11 +",
     color: "#837BB7",
   },
 ];
@@ -61,31 +61,31 @@ const categories = [
     id: "baixo",
     title: "Baixo",
     color: "#A1C620",
-    length: 40,
+    length: 30,
   },
   {
     id: "moderado",
     title: "Moderado",
     color: "#EEA91D",
-    length: 50,
+    length: 40,
   },
   {
     id: "alto",
     title: "Alto",
     color: "#E96B1F",
-    length: 60,
+    length: 50,
   },
   {
     id: "muito-alto",
     title: "Muito Alto",
     color: "#B563A5",
-    length: 70,
+    length: 60,
   },
   {
     id: "extremo",
     title: "Extremo",
     color: "#837BB7",
-    length: 80,
+    length: 70,
   },
 ];
 

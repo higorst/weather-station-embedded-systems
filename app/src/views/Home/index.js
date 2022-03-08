@@ -52,6 +52,7 @@ function Home() {
             key={item.id}
             color={item.color}
             length={item.length}
+            id={item.id}
             items={
               item.id === "baixo"
                 ? indexes.slice(0, 2)
