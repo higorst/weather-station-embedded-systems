@@ -9,7 +9,7 @@
 
 #define DHTPIN 15
 #define DHTTYPE DHT11
-#define UVPIN 2
+#define UVPIN 35
 #define SCREEN_WIDTH 128
 #define SCREEN_HEIGHT 64
 #define OLED_RESET -1
@@ -52,8 +52,15 @@ void loop()
 {
   float humidity = dht.readHumidity();
   float temperature = dht.readTemperature();
-  float uvValue = analogRead(UVPIN);
+  float uvPin = analogRead(UVPIN);
+  
+  float uvValue = 0.0;
+  int auxUV = 0;
   String payload;
+
+  uvValue = uvPin/(1024.0*3.3);
+  auxUV = (int(uvValue*100));
+  uvValue = (float(auxUV)/100);
   
   sensors["humidity"] = humidity;
   sensors["temperature"] = temperature;
@@ -84,7 +91,7 @@ void loop()
   Serial.print("Temperature: ");
   Serial.print(temperature);
   Serial.println(" *C ");
-  Serial.print("sensor reading = ");
+  Serial.print("UV: ");
   Serial.println(uvValue);
 
   display.clearDisplay();
@@ -92,7 +99,7 @@ void loop()
   showHumidity(humidity);
   showTemperature(temperature);
   showUV(uvValue);
-  delay(2000);
+  delay(30000);
 }
 
 void showHumidity(float h) 

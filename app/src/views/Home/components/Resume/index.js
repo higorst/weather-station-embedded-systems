@@ -7,9 +7,9 @@ const Resume = ({ data, category }) => {
     <S.Container color={category.color}>
       <Header category={category} />
       <Footer />
-      <p>{`Temperatura: ${data.temperature}°C`}</p>
-      <p>{`Umidade: ${data.humidity}%`}</p>
-      <p>{`UV: ${data.uv}`}</p>
+      <p>{`Temperatura: ${data?.temperature}°C`}</p>
+      <p>{`Umidade: ${data?.humidity}%`}</p>
+      <p>{`UV: ${data?.uv.toFixed(0)}`}</p>
     </S.Container>
   );
 };
