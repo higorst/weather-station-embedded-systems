@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import { Container } from "components";
 
@@ -7,10 +7,20 @@ import { motion } from "framer-motion";
 
 import animate from "./animation.config";
 
-import { indexes, categories, data } from "./items";
+import { indexes, categories } from "./items";
 import { Category, Resume } from "./components";
+import { socket } from '../../services/socket';
 
 function Home() {
+  
+  const [values, setValues] = useState(null);
+
+  useEffect(() => {
+    socket.on('updateValues', data => {
+      setValues(data);
+    });
+  }, []);
+
   return (
     <Container footer>
       <motion.div
@@ -24,18 +34,18 @@ function Home() {
       </motion.div>
       <S.Container>
         <Resume
-          data={data}
+          data={values}
           category={
             categories.filter(
               (item) =>
                 item.id ===
-                (data.uv < 3
+                (values?.uv < 3
                   ? "baixo"
-                  : data.uv < 6
+                  : values?.uv < 6
                   ? "moderado"
-                  : data.uv < 8
+                  : values?.uv < 8
                   ? "alto"
-                  : data.uv < 11
+                  : values?.uv < 11
                   ? "muito-alto"
                   : "extremo")
             )[0]
