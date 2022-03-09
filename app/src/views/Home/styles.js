@@ -8,12 +8,13 @@ export const Container = styled.div`
   display: flex;
   flex-direction: row-reverse;
   width: 100%;
+
   padding-top: 20px;
   padding-bottom: 20px;
-
-  margin-top: auto;
+  margin-top: 30px;
 
   ${themes.medias.lessThan("lesshd")`
+    margin-top: 20px;
     flex-direction: column;
   `}
 `;

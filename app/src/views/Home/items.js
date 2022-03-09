@@ -67,19 +67,19 @@ const categories = [
     id: "moderado",
     title: "Moderado",
     color: "#EEA91D",
-    length: 60,
+    length: 65,
   },
   {
     id: "alto",
     title: "Alto",
     color: "#E96B1F",
-    length: 70,
+    length: 75,
   },
   {
     id: "muito-alto",
     title: "Muito Alto",
     color: "#B563A5",
-    length: 80,
+    length: 85,
   },
   {
     id: "extremo",

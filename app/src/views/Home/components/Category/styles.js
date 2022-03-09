@@ -10,7 +10,7 @@ export const Container = styled.div`
   flex-direction: row;
   justify-content: flex-end;
 
-  padding: 5px 20px;
+  padding: 5px 5px 5px 20px;
   width: ${({ length }) => length}%;
   border-radius: 4px 20px 20px 4px;
 
@@ -22,7 +22,7 @@ export const Container = styled.div`
   -webkit-backdrop-filter: blur(4.3px);
 
   ${themes.medias.lessThan("lesshd")`
-    padding: 3px 10px;
+    padding: 3px 3px 3px 10px;
   `}
 
   :hover {
@@ -39,7 +39,14 @@ export const Items = styled.div`
   border-radius: 20px;
 
   box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
-    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    rgb(204, 219, 232) 0px 18px 36px -18px inset;
+
+  background: rgba(255, 255, 255, 0.19);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.4px);
+  -webkit-backdrop-filter: blur(7.4px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 `;
 
 export const Protection = styled.div`

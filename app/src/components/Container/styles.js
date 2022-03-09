@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 import themes from "Provider/themes";
 
 const styles = css`
-  margin: 5% 10%;
+  margin: 5% 8%;
   max-width: 1600px;
 
   ${themes.medias.lessThan("hd")`
