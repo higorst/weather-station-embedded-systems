@@ -1,4 +1,5 @@
-import { size, transparentize } from "polished";
+import { motion } from "framer-motion";
+import { rem, size, transparentize } from "polished";
 import themes from "Provider/themes";
 import styled from "styled-components";
 import { css } from "styled-components";
@@ -10,8 +11,9 @@ export const Container = styled.div`
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
+  overflow: hidden;
 
-  padding: 5px 5px 5px 20px;
+  padding: 0 0 0 20px;
   border-radius: 4px 20px 20px 4px;
 
   background: ${({ color }) => transparentize(0.7, color)};
@@ -22,7 +24,7 @@ export const Container = styled.div`
   -webkit-backdrop-filter: blur(4.3px);
 
   ${themes.medias.lessThan("lesshd")`
-    padding: 3px 3px 3px 10px;
+    padding: 0 0 0 10px;
   `}
 
   transform: scale(0.8);
@@ -51,13 +53,26 @@ export const Container = styled.div`
 
   :hover {
     width: ${({ active }) => (active ? 110 : 100)}%;
-    padding: 0 20px;
+    padding: 0 0 0 20px;
   }
+`;
+
+export const Title = styled.p`
+  font-size: ${rem(16)};
+  font-family: ${themes.fonts.bold};
+  text-transform: uppercase;
+  align-self: center;
+  text-align: center;
+  margin-left: 10px;
+  min-width: 95px;
+
+  color: ${themes.colors.gray};
 `;
 
 export const Items = styled.div`
   display: flex;
   width: fit-content;
+  height: 100%;
   flex-direction: row;
   padding: 10px 20px;
   border-radius: 20px;
@@ -83,8 +98,8 @@ export const Protection = styled.div`
   margin-right: auto;
 `;
 
-export const Icon = styled.img`
-  ${size(50)}
+export const Icon = styled(motion.img)`
+  ${({ active }) => size(active ? 60 : 50)}
   border-radius: 20px;
   padding: 10px;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,

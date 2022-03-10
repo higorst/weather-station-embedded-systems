@@ -10,8 +10,10 @@ import animate from "./animation.config";
 import { indexes, categories, data } from "./items";
 import { Category, Resume } from "./components";
 import { socket } from "../../services/socket";
+import { useHistory } from "react-router-dom";
 
 function Home() {
+  const history = useHistory();
   const [values, setValues] = useState(data);
 
   useEffect(() => {
@@ -36,6 +38,10 @@ function Home() {
     )[0];
   }, [values]);
 
+  useEffect(() => {
+    history.replace(`/home?category=${currentCategory.id}`);
+  }, [currentCategory, history]);
+
   return (
     <Container footer>
       <motion.div
@@ -59,6 +65,7 @@ function Home() {
               key={item.id}
               color={item.color}
               id={item.id}
+              title={item.title}
               active={item.id === currentCategory.id}
               items={
                 item.id === "baixo"

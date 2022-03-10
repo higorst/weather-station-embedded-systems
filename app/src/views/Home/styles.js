@@ -23,13 +23,14 @@ export const Container = styled.div`
 
 export const Title = styled(motion.h1)`
   line-height: 24px;
-  font-size: ${rem(24)};
+  font-size: ${rem(30)};
   font-family: ${themes.fonts.bold};
+  text-transform: uppercase;
 
   color: ${themes.colors.gray};
 
   ${themes.medias.lessThan("hd")`
-    font-size: ${rem(20)};
+    font-size: ${rem(26)};
     margin-top: 50px;
   `}
 

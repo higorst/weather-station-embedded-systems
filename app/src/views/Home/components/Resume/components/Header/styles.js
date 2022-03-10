@@ -21,7 +21,7 @@ export const Container = styled.div`
 
 export const Title = styled.h2`
   line-height: 24px;
-  font-size: ${rem(24)};
+  font-size: ${rem(16)};
   font-family: ${themes.fonts.bold};
 
   color: ${themes.colors.gray};
@@ -30,7 +30,7 @@ export const Title = styled.h2`
   margin-bottom: 20px;
 
   ${themes.medias.lessThan("lesshd")`
-    font-size: ${rem(20)};
+    font-size: ${rem(14)};
     text-align: center;
   `}
 `;
@@ -38,6 +38,7 @@ export const Title = styled.h2`
 export const Icons = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: space-evenly;
 `;
 
 export const Icon = styled(motion.img)`

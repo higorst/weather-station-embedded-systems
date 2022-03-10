@@ -10,6 +10,7 @@ export const Container = styled.div`
   text-align: center;
 
   padding: 40px;
+  padding-top: 0;
   border-radius: 8px;
 
   width: 60%;

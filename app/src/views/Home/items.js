@@ -92,7 +92,7 @@ const categories = [
 const data = {
   temperature: 25,
   humidity: 75,
-  uv: 7,
+  uv: 8,
 };
 
 export { indexes, categories, data };
