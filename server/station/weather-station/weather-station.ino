@@ -96,30 +96,45 @@ void loop()
 
   display.clearDisplay();
   
+  showTitle();
   showHumidity(humidity);
   showTemperature(temperature);
   showUV(uvValue);
   delay(30000);
 }
 
-void showHumidity(float h) 
+void showTitle()
 {
   display.setTextSize(1);
+  display.setCursor(40, 8);
+  display.println("ESTACAO");
+  display.setCursor(26, 16);
+  display.println("METEOROLOGICA");
+  display.display();
+}
+
+void showHumidity(float h) 
+{
+  int h_int = (int) h;
+  display.setTextSize(1);
   display.setTextColor(WHITE);
-  display.setCursor(0, 20);
+  display.setCursor(5, 30);
   display.print("Humidade: ");
-  display.print(h);
+  display.print(h_int);
   display.println("%");
   display.display();
 }
 
 void showTemperature(float t) 
 {
+  int t_int = (int) t;
   display.setTextSize(1);
   display.setTextColor(WHITE);
-  display.setCursor(0, 30);
+  display.setCursor(5, 40);
   display.print("Temperatura: ");
-  display.print(t);
+  display.print(t_int);
+  display.drawCircle(99, 42, 2, WHITE);
+  display.setCursor(103, 40);
   display.println("C");
   display.display();
 }
@@ -128,7 +143,7 @@ void showUV(float uv)
 {
   display.setTextSize(1);
   display.setTextColor(WHITE);
-  display.setCursor(0, 40);
+  display.setCursor(5, 50);
   display.print("Indice UV: ");
   display.println(uv);
   display.display();
