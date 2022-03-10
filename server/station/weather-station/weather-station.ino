@@ -119,7 +119,7 @@ void showHumidity(float h)
   display.setTextSize(1);
   display.setTextColor(WHITE);
   display.setCursor(5, 30);
-  display.print("Humidade: ");
+  display.print("Umidade: ");
   display.print(h_int);
   display.println("%");
   display.display();
