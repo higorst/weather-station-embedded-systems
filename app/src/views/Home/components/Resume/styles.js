@@ -9,11 +9,12 @@ export const Container = styled.div`
   flex-direction: column;
   text-align: center;
 
-  margin: 10%;
   padding: 40px;
   border-radius: 8px;
 
-  height: 100%;
+  width: 60%;
+  margin: 0 30px 0 0;
+
   box-shadow: ${({ color }) => color} 0px 2px 4px,
     ${({ color }) => color} 0px 7px 13px -3px,
     ${({ color }) => color} 0px -3px 0px inset;

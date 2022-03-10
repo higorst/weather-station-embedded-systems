@@ -14,7 +14,7 @@ const Category = ({ color, items, active, id }) => {
       </S.Protection>
       <S.Items>
         {items.map((item) => (
-          <Item item={item} />
+          <Item item={item} active={active} />
         ))}
       </S.Items>
     </S.Container>

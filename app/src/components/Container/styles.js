@@ -1,14 +1,13 @@
 import styled, { css } from "styled-components";
-import themes from "Provider/themes";
 
 const styles = css`
-  margin: 5% 8%;
+  margin: auto;
   max-width: 1600px;
-
-  ${themes.medias.lessThan("hd")`
-    padding: 0;
-    margin: 2% 5%;
-  `}
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 `;
 
 export const Section = styled.section`

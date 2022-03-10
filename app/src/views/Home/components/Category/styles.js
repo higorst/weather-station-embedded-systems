@@ -4,12 +4,12 @@ import styled from "styled-components";
 import { css } from "styled-components";
 
 export const Container = styled.div`
-  transition: width 0.2s, padding-left 0.5s, transform 0.5s, box-shadow 0.3s;
+  transition: width 0.2s, padding 0.1s, transform 0.5s, box-shadow 0.3s;
 
   display: flex;
-  margin-right: auto;
   flex-direction: row;
   justify-content: flex-end;
+  align-items: center;
 
   padding: 5px 5px 5px 20px;
   border-radius: 4px 20px 20px 4px;
@@ -26,13 +26,23 @@ export const Container = styled.div`
   `}
 
   transform: scale(0.8);
-  margin-left: 10px;
-  width: 80%;
+  width: 90%;
+  height: 80px;
   ${({ active }) =>
     active &&
     css`
-      width: 90%;
-      margin-left: 0;
+      margin-top: 25px;
+      margin-bottom: 25px;
+
+      height: 100px;
+
+      :first-child {
+        margin-top: 0;
+      }
+      :last-child {
+        margin-bottom: 0;
+      }
+
       transform: scale(1);
       box-shadow: 0 4px 30px ${({ color }) => color},
         ${({ color }) => color} 0px 1px 3px 0px,
@@ -40,8 +50,8 @@ export const Container = styled.div`
     `}
 
   :hover {
-    width: ${({ active }) => (active ? 100 : 90)}%;
-    padding-left: 10%;
+    width: ${({ active }) => (active ? 110 : 100)}%;
+    padding: 0 20px;
   }
 `;
 

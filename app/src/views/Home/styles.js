@@ -9,6 +9,8 @@ export const Container = styled.div`
   flex-direction: row-reverse;
   width: 100%;
 
+  align-items: center;
+
   padding-top: 20px;
   padding-bottom: 20px;
   margin-top: 30px;
@@ -28,6 +30,7 @@ export const Title = styled(motion.h1)`
 
   ${themes.medias.lessThan("hd")`
     font-size: ${rem(20)};
+    margin-top: 50px;
   `}
 
   span {
@@ -39,11 +42,12 @@ export const Title = styled(motion.h1)`
 `;
 
 export const WrapperItems = styled(motion.div)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  grid-gap: 20px;
-  padding-bottom: 20px;
+  height: 100%;
 
   ${themes.medias.lessThan("lesshd")`
     margin-top: 30px;
