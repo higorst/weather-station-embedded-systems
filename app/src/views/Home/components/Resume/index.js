@@ -6,11 +6,8 @@ const Resume = ({ data, category }) => {
   return (
     <S.Container color={category.color}>
       <Tag category={category} />
-      <Header category={category} />
-      <Footer />
-      <p>{`Temperatura: ${data?.temperature}°C`}</p>
-      <p>{`Umidade: ${data?.humidity}%`}</p>
-      <p>{`UV: ${data?.uv.toFixed(0)}`}</p>
+      <Header category={category} data={data} />
+      <Footer category={category} />
     </S.Container>
   );
 };

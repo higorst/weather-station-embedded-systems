@@ -7,23 +7,52 @@ import umbrellaIcon from "assets/icons/umbrella.png";
 import sunglassesIcon from "assets/icons/sunglasses.png";
 
 const icons = {
-  baixo: [freeIcon],
-  moderado: [shirtIcon, capIcon, sunblockIcon],
-  alto: [shirtIcon, capIcon, sunblockIcon, umbrellaIcon],
+  baixo: [
+    {
+      icon: freeIcon,
+      msg: "Não são necessárias medidas de proteção. Divirta-se :D",
+    },
+  ],
+  moderado: [
+    {
+      icon: shirtIcon,
+      msg: "Vestimenta para cobrir boa parte do seu corpo",
+    },
+    { icon: capIcon, msg: "Um chapéu será interessante para cobrir o rosto" },
+    {
+      icon: sunblockIcon,
+      msg: "Dentro desse nível peles sensíveis começam a queimar a partir de 12 minutos de exposição",
+    },
+  ],
+  alto: [
+    { icon: shirtIcon, msg: "Vestimenta para cobrir boa parte do seu corpo" },
+    { icon: capIcon, msg: "Um chapéu será interessante para cobrir o rosto" },
+    {
+      icon: sunblockIcon,
+      msg: "Dentro desse nível peles sensíveis começam a queimar a partir de 8 minutos de exposição",
+    },
+    { icon: umbrellaIcon, msg: "Procurar sombra entre as 12h e às 16h" },
+  ],
   "muito-alto": [
-    shirtIcon,
-    capIcon,
-    sunblockIcon,
-    umbrellaIcon,
-    sunglassesIcon,
+    { icon: shirtIcon, msg: "Vestimenta para cobrir boa parte do seu corpo" },
+    { icon: capIcon, msg: "Um chapéu será interessante para cobrir o rosto" },
+    {
+      icon: sunblockIcon,
+      msg: "Dentro desse nível peles sensíveis começam a queimar a partir de 6 minutos de exposição",
+    },
+    { icon: umbrellaIcon, msg: "Procurar sombra entre as 12h e às 16h" },
+    { icon: sunglassesIcon, msg: "Óculos de sol com filtro UV será excelente" },
   ],
   extremo: [
-    shirtIcon,
-    capIcon,
-    sunblockIcon,
-    umbrellaIcon,
-    sunglassesIcon,
-    homeIcon,
+    { icon: shirtIcon, msg: "Vestimenta para cobrir boa parte do seu corpo" },
+    { icon: capIcon, msg: "Um chapéu será interessante para cobrir o rosto" },
+    {
+      icon: sunblockIcon,
+      msg: "Dentro desse nível peles sensíveis começam a queimar a partir de 4 minutos de exposição",
+    },
+    { icon: umbrellaIcon, msg: "O ideal é EVITAR TODA exposição solar" },
+    { icon: sunglassesIcon, msg: "Óculos de sol com filtro UV será excelente" },
+    { icon: homeIcon, msg: "O ideal é EVITAR TODA exposição solar" },
   ],
 };
 

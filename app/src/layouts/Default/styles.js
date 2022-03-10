@@ -12,7 +12,8 @@ export const Container = styled.div`
   overflow: hidden;
   background-image: linear-gradient(
     90deg,
-    ${({ color }) => transparentize(0.6, color) || colorsGradient[0]} 40%,
+    ${({ color }) => (color ? transparentize(0.6, color) : colorsGradient[0])}
+      40%,
     ${colorsGradient[1]} 94%
   );
 
@@ -21,7 +22,9 @@ export const Container = styled.div`
   ${themes.medias.lessThan("lesshd")`
     background-image: linear-gradient(180deg, ${colorsGradient[1]} 40%, ${({
     color,
-  }) => transparentize(0.6, color) || colorsGradient[0]} 94%);
+  }) =>
+    (color ? transparentize(0.6, color) : colorsGradient[0]) ||
+    colorsGradient[0]} 94%);
   `}
 `;
 
