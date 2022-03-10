@@ -4,9 +4,9 @@ import * as S from "./styles";
 
 import { icons } from "./icons";
 
-const Category = ({ color, length, items, id }) => {
+const Category = ({ color, items, active, id }) => {
   return (
-    <S.Container color={color} length={length}>
+    <S.Container color={color} active={active}>
       <S.Protection>
         {icons[id].map((icon) => (
           <S.Icon src={icon} />

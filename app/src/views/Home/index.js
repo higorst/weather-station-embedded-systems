@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 
 import { Container } from "components";
 
@@ -7,19 +7,34 @@ import { motion } from "framer-motion";
 
 import animate from "./animation.config";
 
-import { indexes, categories } from "./items";
+import { indexes, categories, data } from "./items";
 import { Category, Resume } from "./components";
-import { socket } from '../../services/socket';
+import { socket } from "../../services/socket";
 
 function Home() {
-  
-  const [values, setValues] = useState(null);
+  const [values, setValues] = useState(data);
 
   useEffect(() => {
-    socket.on('updateValues', data => {
+    socket.on("updateValues", (data) => {
       setValues(data);
     });
   }, []);
+
+  const currentCategory = useMemo(() => {
+    return categories.filter(
+      (item) =>
+        item.id ===
+        (values?.uv < 3
+          ? "baixo"
+          : values?.uv < 6
+          ? "moderado"
+          : values?.uv < 8
+          ? "alto"
+          : values?.uv < 11
+          ? "muito-alto"
+          : "extremo")
+    )[0];
+  }, [values]);
 
   return (
     <Container footer>
@@ -33,24 +48,7 @@ function Home() {
         </S.Title>
       </motion.div>
       <S.Container>
-        <Resume
-          data={values}
-          category={
-            categories.filter(
-              (item) =>
-                item.id ===
-                (values?.uv < 3
-                  ? "baixo"
-                  : values?.uv < 6
-                  ? "moderado"
-                  : values?.uv < 8
-                  ? "alto"
-                  : values?.uv < 11
-                  ? "muito-alto"
-                  : "extremo")
-            )[0]
-          }
-        />
+        <Resume data={values} category={currentCategory} />
         <S.WrapperItems
           initial="hidden"
           animate="visible"
@@ -60,8 +58,8 @@ function Home() {
             <Category
               key={item.id}
               color={item.color}
-              length={item.length}
               id={item.id}
+              active={item.id === currentCategory.id}
               items={
                 item.id === "baixo"
                   ? indexes.slice(0, 2)

@@ -1,9 +1,10 @@
 import { size, transparentize } from "polished";
 import themes from "Provider/themes";
 import styled from "styled-components";
+import { css } from "styled-components";
 
 export const Container = styled.div`
-  transition: width 0.2s, padding-left 0.5s;
+  transition: width 0.2s, padding-left 0.5s, transform 0.5s, box-shadow 0.3s;
 
   display: flex;
   margin-right: auto;
@@ -11,7 +12,6 @@ export const Container = styled.div`
   justify-content: flex-end;
 
   padding: 5px 5px 5px 20px;
-  width: ${({ length }) => length}%;
   border-radius: 4px 20px 20px 4px;
 
   background: ${({ color }) => transparentize(0.7, color)};
@@ -25,8 +25,22 @@ export const Container = styled.div`
     padding: 3px 3px 3px 10px;
   `}
 
+  transform: scale(0.8);
+  margin-left: 10px;
+  width: 80%;
+  ${({ active }) =>
+    active &&
+    css`
+      width: 90%;
+      margin-left: 0;
+      transform: scale(1);
+      box-shadow: 0 4px 30px ${({ color }) => color},
+        ${({ color }) => color} 0px 1px 3px 0px,
+        ${({ color }) => color} 0px 0px 0px 1px;
+    `}
+
   :hover {
-    width: ${({ length }) => length + 10}%;
+    width: ${({ active }) => (active ? 100 : 90)}%;
     padding-left: 10%;
   }
 `;
