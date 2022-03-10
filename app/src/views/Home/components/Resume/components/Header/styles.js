@@ -24,16 +24,22 @@ export const Value = styled.div`
     line-height: 24px;
     font-size: ${rem(30)};
     font-family: ${themes.fonts.bold};
-
-    /* color: ${themes.colors.gray}; */
+    ${themes.medias.lessThan("lesshd")`
+      font-size: ${rem(45)};
+    `}
   }
 
   ${themes.medias.lessThan("lesshd")`
-    padding: 10px;
+    padding: 35px;
   `}
 `;
 
 export const Icon = styled(motion.img)`
   ${size(60)}
   margin-bottom: 20px;
+
+  ${themes.medias.lessThan("lesshd")`
+    width: 100px;
+    height: 100px;
+  `}
 `;

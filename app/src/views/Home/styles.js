@@ -17,6 +17,7 @@ export const Container = styled.div`
 
   ${themes.medias.lessThan("lesshd")`
     margin-top: 20px;
+    // height: 100%;
     flex-direction: column;
   `}
 `;
@@ -33,6 +34,7 @@ export const Title = styled(motion.h1)`
     font-size: ${rem(26)};
     margin-top: 50px;
   `}
+  text-align: center !important;
 
   span {
     margin-bottom: 20px;

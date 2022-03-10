@@ -31,7 +31,7 @@ export const Title = styled.h2`
   margin-bottom: 20px;
 
   ${themes.medias.lessThan("lesshd")`
-    font-size: ${rem(14)};
+    font-size: ${rem(25)};
     text-align: center;
   `}
 `;
@@ -48,4 +48,9 @@ export const Icon = styled(motion.img)`
   :first-child {
     margin-left: 0;
   }
+
+  ${themes.medias.lessThan("lesshd")`
+    width: 100px;
+    height: 100px;
+  `}
 `;

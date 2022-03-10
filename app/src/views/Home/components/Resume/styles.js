@@ -24,5 +24,6 @@ export const Container = styled.div`
   ${themes.medias.lessThan("lesshd")`
     margin: 20px 10% 30px;
     padding: 20px;
+    width: 95%;
   `}
 `;

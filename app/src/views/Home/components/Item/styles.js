@@ -7,7 +7,7 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
 
-  ${({ active }) => size(active ? 60 : 46)}
+  ${({ active }) => size(active ? 50 : 40)}
   margin: auto;
 
   margin-left: 20px;
@@ -24,6 +24,8 @@ export const Container = styled.div`
 
   ${themes.medias.lessThan("lesshd")`
     margin-left: 10px;
+    width: ${({ active }) => (active ? 70 : 60)}px;
+    height: ${({ active }) => (active ? 70 : 60)}px;
   `}
 
   p {

@@ -7,14 +7,14 @@ import { motion } from "framer-motion";
 
 import animate from "./animation.config";
 
-import { indexes, categories, data } from "./items";
+import { indexes, categories } from "./items";
 import { Category, Resume } from "./components";
 import { socket } from "../../services/socket";
 import { useHistory } from "react-router-dom";
 
 function Home() {
   const history = useHistory();
-  const [values, setValues] = useState(data);
+  const [values, setValues] = useState();
 
   useEffect(() => {
     socket.on("updateValues", (data) => {
@@ -50,11 +50,13 @@ function Home() {
         variants={animate.heading.container}
       >
         <S.Title variants={animate.heading.titles}>
-          Sistema de gerenciamento de estação meteorológica
+          {!values
+            ? "Aguarde, coletando informações ..."
+            : "Sistema de gerenciamento de estação meteorológica"}
         </S.Title>
       </motion.div>
       <S.Container>
-        <Resume data={values} category={currentCategory} />
+        {values && <Resume data={values} category={currentCategory} />}
         <S.WrapperItems
           initial="hidden"
           animate="visible"

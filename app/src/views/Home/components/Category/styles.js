@@ -23,13 +23,17 @@ export const Container = styled.div`
   backdrop-filter: blur(4.3px);
   -webkit-backdrop-filter: blur(4.3px);
 
-  ${themes.medias.lessThan("lesshd")`
-    padding: 0 0 0 10px;
-  `}
-
   transform: scale(0.8);
   width: 90%;
   height: 80px;
+
+  ${themes.medias.lessThan("lesshd")`
+    padding: 0 0 0 10px;
+    transform: scaleY(1);
+    margin: 30px 0;
+    width: ${({ active }) => (active ? 90 : 80)}%;
+  `}
+
   ${({ active }) =>
     active &&
     css`
@@ -113,6 +117,16 @@ export const Icon = styled(motion.img)`
   }
 
   ${themes.medias.lessThan("lesshd")`
+    margin-left: 10px;
     padding: 5px 10px;
+    width: ${({ active }) => (active ? 75 : 65)}px;
+    height: ${({ active }) => (active ? 75 : 65)}px;
+  `}
+
+  ${themes.medias.lessThan("hd")`
+    margin-left: 10px;
+    padding: 5px 10px;
+    width: ${({ active }) => (active ? 60 : 50)}px;
+    height: ${({ active }) => (active ? 60 : 50)}px;
   `}
 `;

@@ -11,7 +11,6 @@ function Default({ children, pageTitle }) {
 
   const category = useMemo(() => {
     const idCategory = location.search.replace("?category=", "");
-    console.log(location.search, idCategory);
     return categories.filter((item) => item.id === idCategory)[0];
   }, [location]);
 

@@ -11,6 +11,8 @@ export const Tag = styled.div`
 
   ${themes.medias.lessThan("lesshd")`
     top: -30px;
+    width: 200px;
+    right: -75%;
   `}
 
   display: flex;
@@ -28,5 +30,9 @@ export const Tag = styled.div`
     text-transform: uppercase;
     font-weight: ${themes.fonts.bold};
     color: ${themes.colors.white};
+
+    ${themes.medias.lessThan("lesshd")`
+      font-size: 26px;
+    `}
   }
 `;

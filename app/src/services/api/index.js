@@ -2,8 +2,11 @@ import axios from "axios";
 
 export * from "./sensor";
 
+const baseURL = "https://e9bc-177-223-164-105.ngrok.io";
+
 const api = axios.create({
-  baseURL: "http://127.0.0.1:3001/",
+  baseURL,
 });
 
 export default api;
+export { baseURL };
